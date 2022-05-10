@@ -3,6 +3,8 @@ import Head from "next/head";
 import About from "../components/about";
 import MastHead from "../components/masthead";
 import Skills from "../components/skills";
+import TrustedBy from "../components/trustedby";
+import Works from "../components/works";
 
 const Home: NextPage = () => {
   return (
@@ -13,6 +15,8 @@ const Home: NextPage = () => {
       <MastHead />
       <About />
       <Skills />
+      {/* <Works /> */}
+      <TrustedBy />
     </>
   );
 };
