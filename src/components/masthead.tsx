@@ -1,10 +1,27 @@
-import React from "react";
+import React, { useRef, useContext, useState, useCallback } from "react";
 import Image from "next/image";
 import { ChevronDownIcon } from "@heroicons/react/outline";
+import { ScrollContext } from "../utils/scroll-observer";
 
 const MastHead: React.FC = () => {
+  const refContainer = useRef<HTMLDivElement>(null);
+  const { scrollY } = useContext(ScrollContext);
+
+  let progress = 0;
+
+  const { current: elContainer } = refContainer;
+  if (elContainer) {
+    progress = Math.min(1, scrollY / elContainer.clientHeight);
+  }
+
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center">
+    <div
+      ref={refContainer}
+      className="min-h-screen flex flex-col items-center justify-center sticky top-0 -z-10"
+      style={{
+        transform: `translateY(-${progress * 20}vh)`,
+      }}
+    >
       <video
         autoPlay
         loop
