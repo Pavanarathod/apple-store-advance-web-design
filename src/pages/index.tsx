@@ -7,6 +7,7 @@ import TrustedBy from "../components/trustedby";
 import Works from "../components/works";
 
 const Home: NextPage = () => {
+  console.log("Making some changes...");
   return (
     <>
       <Head>
