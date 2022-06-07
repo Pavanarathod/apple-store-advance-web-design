@@ -37,19 +37,18 @@ export const Carousel: React.FC<Props> = ({ className, children }) => {
   }, [emblaApi, setSelectedIndex]);
 
   useEffect(() => {
-      if(!emblaApi) return;
-      onSelect();
-      emblaApi.on("select", onSelect);
-      return () => 
-  }, [])
+    if (!emblaApi) return;
+    onSelect();
+    emblaApi.on("select", onSelect);
+  }, [emblaApi, onSelect]);
 
   return (
     <CarouselContext.Provider value={{ embla: emblaApi, selectedIndex }}>
       <div
         ref={viewportRef}
-        className={`${styles.viewport}  w-full overflow-hidden ${className}`}
+        className={`${styles.viewport} w-full overflow-hidden ${className}`}
       >
-        <div className={`${styles.container}flex`}>{children}</div>
+        <div className={`${styles.container} flex`}>{children}</div>
       </div>
     </CarouselContext.Provider>
   );
