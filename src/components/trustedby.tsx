@@ -14,7 +14,8 @@ const TrustedBy: React.FC = () => {
       <div className="flex flex-col justify-center items-center">
         <div className="container mx-auto lg:max-w-[70%] lg:px-10">
           <h3 className="text-3xl lg:text-4xl tracking-tight text-center px-10 !leading-[3.4em]">
-            We believe in good communication and fully transparent development.
+            We believe in good communication and fully transparent development
+            process.
           </h3>
         </div>
       </div>
